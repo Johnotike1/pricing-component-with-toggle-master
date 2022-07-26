@@ -1,0 +1,201 @@
+@import url("https://fonts.google.com/specimen/Montserrat");
+
+:root {
+
+    --very-light-grayish-blue: hsl(240, 78%, 98%);
+    --light-grayish-blue: hsl(234, 14%, 74%);
+    --grayish-blue: hsl(233, 13%, 49%);
+    --dark-grayish-lue: hsl(232, 13%, 33%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Montserrat sans-serif;
+    font-size: 15px;
+    font-weight: 700px;
+    background: var(--very-light-grayish-blue);
+}
+
+main {
+    margin: auto;
+    background: url("./images/bg-top.svg"), url("./images/bg-bottom.svg");
+    background-position: right top, left bottom;
+    background-repeat: no-repeat, no-repeat;
+    min-width: 1440px;
+    width: 80%;
+    text-align: center;
+}
+
+.header {
+    margin-top: 2.5rem;
+    font-size: 3rem;
+    text-align: center;
+    padding: 20px
+}
+
+.plans {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding-bottom: 1rem;
+}
+
+.switch {
+    position: relative;
+    width: 60px;
+    height: 35px;
+    display: inline-block;
+    /* padding: 1rem; */
+}
+
+.switch input {
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 35px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    bottom: 4px;
+    left: 4px;
+    height: 26px;
+    width: 26px;
+    background-color: #fff;
+    transition: 0.4s;
+    border-radius: 50%;
+
+}
+
+input:checked+.slider {
+    background-color: blue;
+}
+
+input:checked+.slider:before {
+    transform: translateX(26px);
+}
+
+.card {
+    float: left;
+    width: 33.3%;
+    border-radius: 30px;
+}
+
+.price-box {
+    list-style-type: none;
+    color: var(--dark-grayish-lue);
+    background: #fff;
+    border-radius: 5px;
+    font-size: 1.3rem;
+}
+
+.center {
+    color: #fff;
+    background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+
+
+}
+
+
+.price-box li {
+    text-decoration: none;
+    padding: 20px;
+    border-bottom: 1px solid var(--dark-grayish-lue);
+
+}
+
+.price-box.center li {
+    border-bottom: 1px solid #fff
+}
+
+
+.monthly {
+    font-size: 4rem;
+    display: none;
+}
+
+
+.annually {
+    display: block;
+    font-size: 4rem;
+
+}
+
+.headWrap {
+    padding-top: 30px;
+}
+
+li.head {
+    border: 0
+}
+
+.center li.head {
+    border: 0
+}
+
+li.monthly,
+li.annually {
+    border: 0;
+
+}
+
+.center li.monthly,
+.center li.annually {
+    border: 0;
+}
+
+
+div.btn {
+    padding: 2rem 2rem 2rem 3rem;
+}
+
+.center div.btn {
+    padding: 2rem 2rem 4rem 3rem;
+}
+
+
+button {
+    border: 2px solid var(--dark-grayish-lue);
+    padding: 20px 30px;
+    width: 80%;
+    border-radius: 10px;
+    color: var(--grayish-blue);
+    font-size: 1.8rem;
+    background: inherit;
+
+}
+
+.center button {
+    color: #fff;
+    border: 2px solid #fff;
+    background: inherit;
+}
+
+@media(max-width: 375px) {
+    main {
+        width: 80%;
+    }
+
+    div.card {
+        display: flex;
+        flex-direction: column;
+    }
+
+}
